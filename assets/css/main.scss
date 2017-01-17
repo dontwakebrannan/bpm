@@ -1,0 +1,82 @@
+---
+# Main styles
+---
+
+$black: #323230;
+$highlight: #EA5457;
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+/////////////////////////////
+// General
+/////////////////////////////
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    @include font-size(13px);
+    line-height: 1.8em;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+h1, h2 {
+    @include font-size(13px);
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+
+    &.active {
+        color: $highlight;
+    }
+}
+
+/////////////////////////////
+// LAYOUT
+/////////////////////////////
+
+.container {
+    padding: 60px;
+}
+
+.row {
+    max-width: 100rem;
+}
+
+/////////////////////////////
+// HEADER
+/////////////////////////////
+
+header[role=banner] h1 {
+    margin-bottom: 2em;
+}
+
+/////////////////////////////
+// NAV
+/////////////////////////////
+
+nav p {
+    margin: 0 0 2em 0;
+}
+
+nav span {
+    display: inline-block;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-right: 3em;
+}
+
+nav a {
+}
