@@ -1,28 +1,20 @@
-<script src="{{ "/assets/js/jquery.js" | prepend: baseurl }}"></script>
+<!-- <script src="{{ "/assets/js/jquery.js" | prepend: baseurl }}"></script>
 <script src="{{ "/assets/js/foundation.min.js" | prepend: baseurl }}"></script>
 <script src="{{ "/assets/js/what-input.js" | prepend: baseurl }}"></script>
 <script src="{{ "/assets/js/masonry.pkgd.min.js" | prepend: baseurl }}"></script>
 <script src="{{ "/assets/js/imagesloaded.pkgd.min.js" | prepend: baseurl }}"></script>
 <script>
 $(document).foundation();
-/*
-var container = document.querySelector('#masonry-container');
-var msnry = new Masonry( container, {
-    itemSelector: '#masonry-container > div'
-});
-*/
-/*
-var $grid = $('#masonry-container').masonry({
-    itemSelector: '#masonry-container > div'
-});
-
-$grid.imagesLoaded().progress(function(){
-    $grid.masonry('layout');
-});
-*/
 var $grid = $('#masonry-container').imagesLoaded(function(){
     $grid.masonry({
         itemSelector: '#masonry-container > div'
     });
 });
 </script>
+-->
+
+<script src="{{ '/assets/js/swipe.min.js' | prepend: baseurl }}"></script>
+<script src="{{ '/assets/js/throttle.js' | prepend: baseurl }}"></script>
+<script src="{{ '/assets/js/carousel.js' | prepend: baseurl }}"></script>
+<script src="{{ '/assets/js/image.js' | prepend: baseurl }}"></script>
+<script src="{{ '/assets/js/main.js' | prepend: baseurl }}"></script>

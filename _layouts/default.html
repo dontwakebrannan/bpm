@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body>
-<div class="container">
-{{ content }}
-</div>
+<body class="viewport">
+    <header role="banner">
+        <nav role="navigation">
+            <span class="back-btn">Back</span>
+            <span><h1><a href="/">Brannan McGill</a></h1></span>
+            <span><a href="/work">Work</a></span>
+            <span><a href="/about">About</a></span>
+        </nav>
+        <p class="copyright">&copy;2017 Brannan McGill. All Rights Reserved.</p>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
 {% include scripts.html %}
 </body>
 </html>
