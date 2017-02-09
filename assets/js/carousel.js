@@ -19,31 +19,35 @@ Carousel.prototype.setup = function() {
         stopPropagation: true,
         callback: function(index, element) {
             if (mySwipe.getPos() == 0) {
-                that.prev.style.display = 'none';
+                that.prev.style.visibility = 'hidden';
             } else {
-                that.prev.style.display = 'block';
+                that.prev.style.visibility = 'visible';
             }
             if (mySwipe.getPos() == mySwipe.getNumSlides() - 1) {
-                that.next.style.display = 'none';
+                that.next.style.visibility = 'hidden';
             } else {
-                that.next.style.display = 'block';
+                that.next.style.visibility = 'visible';
             }
         },
         transitionEnd: function(index, elem) {}
     });
 
     if (this.prev || this.next) {
-        if (mySwipe.getPos() == 0) {
-            that.prev.style.display = 'none';
-        } else if (mySwipe.getPos() == mySwipe.getNumSlides() - 1) {
-            that.next.style.display = 'none';
+        if (this.slideCount > 1) {
+            that.prev.style.visibility = 'visible';
+            that.next.style.visibility = 'visible';
+            if (mySwipe.getPos() == 0) {
+                that.prev.style.visibility = 'hidden';
+            } else if (mySwipe.getPos() == mySwipe.getNumSlides() - 1) {
+                that.next.style.visibility = 'visible';
+            }
+            this.prev.addEventListener('click', function(){
+                mySwipe.prev();
+            });
+            this.next.addEventListener('click', function(){
+                mySwipe.next();
+            });
         }
-        this.prev.addEventListener('click', function(){
-            mySwipe.prev();
-        });
-        this.next.addEventListener('click', function(){
-            mySwipe.next();
-        });
     }
 }
 

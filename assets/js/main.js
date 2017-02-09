@@ -1,9 +1,10 @@
 (function(){
     var wrap = document.querySelector('.carousel');
+    var slider = wrap.querySelector('.slider');
     var carousel = new Carousel(wrap);
 
-    var width = wrap.offsetWidth;
-    var height = wrap.offsetHeight;
+    var width = slider.offsetWidth;
+    var height = slider.offsetHeight;
 
     carousel.setCarouselSize(width * Carousel.slideCount, height);
     carousel.setSlideSizes(width, height);
@@ -20,8 +21,8 @@
 
     var resizeWindowHandler = throttle(function(){
         // Carousel resizing
-        width = wrap.offsetWidth;
-        height = wrap.offsetHeight;
+        width = slider.offsetWidth;
+        height = slider.offsetHeight;
         carousel.setCarouselSize(width * Carousel.slideCount, height);
         carousel.setSlideSizes(width, height);
 

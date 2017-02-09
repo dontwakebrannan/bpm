@@ -21,6 +21,7 @@ Image.prototype.createImage = function(url, elem, fit){
 }
 
 Image.prototype.fitToWrapper = function(elem) {
+    /*
     var wrapWidth = this.wrap.offsetWidth;
     var winHeight = window.innerHeight - document.querySelector('header[role=banner]').offsetHeight;
     var img = this.wrap.querySelector('img');
@@ -46,4 +47,31 @@ Image.prototype.fitToWrapper = function(elem) {
         img.style.marginLeft = 'auto';
         img.style.marginRight = 'auto';
     }
+    */
+
+    var img = this.wrap.querySelector('img');
+    var wrapWidth = this.wrap.offsetWidth;
+    var wrapHeight = this.wrap.offsetHeight;
+    var imgWidth = img.naturalWidth;
+    var imgHeight = img.naturalHeight;
+    var ratio = imgWidth / imgHeight;
+
+    var newImgWidth = wrapWidth;
+    var newImgHeight = Math.round(newImgWidth / ratio);
+
+    if (newImgHeight > wrapHeight) {
+        newImgHeight = wrapHeight;
+        newImgWidth = Math.round(newImgHeight * ratio);
+    }
+
+    if (wrapHeight > newImgHeight) {
+        var marginTop = Math.round((wrapHeight - newImgHeight) / 2);
+        img.style.marginTop = marginTop + 'px';
+    } else {
+        img.style.marginTop = 0;
+    }
+
+    img.style.width = newImgWidth + 'px';
+    img.style.height = newImgHeight + 'px';
+
 }
