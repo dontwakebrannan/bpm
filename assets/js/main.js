@@ -1,14 +1,16 @@
 (function(){
     var wrap = document.querySelector('.carousel');
-    var slider = wrap.querySelector('.slider');
-    var carousel = new Carousel(wrap);
+    if (wrap) { // If carousel is present
+        var slider = wrap.querySelector('.slider');
+        var carousel = new Carousel(wrap);
 
-    var width = slider.offsetWidth;
-    var height = slider.offsetHeight;
+        var width = slider.offsetWidth;
+        var height = slider.offsetHeight;
 
-    carousel.setCarouselSize(width * Carousel.slideCount, height);
-    carousel.setSlideSizes(width, height);
-    carousel.setup();
+        carousel.setCarouselSize(width * Carousel.slideCount, height);
+        carousel.setSlideSizes(width, height);
+        carousel.setup();
+    }
 
     var noscripts = document.querySelectorAll('noscript');
 
@@ -30,7 +32,9 @@
         for (var i = 0; i < noscripts.length; i++) {
             var elem = noscripts[i].parentNode;
             img.fitToWrapper(elem);
+            // console.log(elem);
         }
+
     }, 300);
 
     window.onresize = resizeWindowHandler;

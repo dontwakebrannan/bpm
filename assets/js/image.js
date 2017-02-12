@@ -21,35 +21,7 @@ Image.prototype.createImage = function(url, elem, fit){
 }
 
 Image.prototype.fitToWrapper = function(elem) {
-    /*
-    var wrapWidth = this.wrap.offsetWidth;
-    var winHeight = window.innerHeight - document.querySelector('header[role=banner]').offsetHeight;
-    var img = this.wrap.querySelector('img');
-    var imgWidth = img.offsetWidth;
-    var imgHeight = img.offsetHeight;
-    var ratio = Math.round(imgWidth / imgHeight);
-
-    var imgWidth = wrapWidth;
-    var imgHeight = Math.round(imgWidth / ratio);
-
-    if (imgHeight > winHeight) {
-        imgHeight = winHeight;
-        imgWidth = Math.round(imgHeight * ratio);
-    }
-
-    img.style.width = imgWidth + 'px';
-
-    if (winHeight > imgHeight) {
-        var marginTop = Math.round((winHeight - img.offsetHeight) / 2);
-        img.style.marginTop = marginTop + 'px';
-    } else {
-        img.style.marginTop = 0;
-        img.style.marginLeft = 'auto';
-        img.style.marginRight = 'auto';
-    }
-    */
-
-    var img = this.wrap.querySelector('img');
+    var img = elem.querySelector('img');
     var wrapWidth = this.wrap.offsetWidth;
     var wrapHeight = this.wrap.offsetHeight;
     var imgWidth = img.naturalWidth;
@@ -73,5 +45,4 @@ Image.prototype.fitToWrapper = function(elem) {
 
     img.style.width = newImgWidth + 'px';
     img.style.height = newImgHeight + 'px';
-
 }
