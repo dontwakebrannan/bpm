@@ -1,6 +1,9 @@
 (function(){
     var wrap = document.querySelector('.carousel');
-    if (wrap) { // If carousel is present
+    var contentWrap = document.querySelector('.content-wrap');
+    var header = document.querySelector('header[role=banner]');
+
+    if (wrap) {
         var slider = wrap.querySelector('.slider');
         var carousel = new Carousel(wrap);
 
@@ -10,6 +13,12 @@
         carousel.setCarouselSize(width * Carousel.slideCount, height);
         carousel.setSlideSizes(width, height);
         carousel.setup();
+    }
+
+    function resizeImageWrap() {
+        var headerHeight = header.offsetHeight;
+        var windowHeight= window.innerHeight;
+        contentWrap.style.height = windowHeight - headerHeight + 'px';
     }
 
     var noscripts = document.querySelectorAll('noscript');
@@ -22,11 +31,14 @@
     }
 
     var resizeWindowHandler = throttle(function(){
-        // Carousel resizing
-        width = slider.offsetWidth;
-        height = slider.offsetHeight;
-        carousel.setCarouselSize(width * Carousel.slideCount, height);
-        carousel.setSlideSizes(width, height);
+        resizeImageWrap();
+        if (wrap) {
+            // Carousel resizing
+            width = slider.offsetWidth;
+            height = slider.offsetHeight;
+            carousel.setCarouselSize(width * Carousel.slideCount, height);
+            carousel.setSlideSizes(width, height);
+        }
 
         // Image resizing
         for (var i = 0; i < noscripts.length; i++) {
@@ -37,6 +49,11 @@
 
     }, 300);
 
+    if (contentWrap) { // Should always be present...
+        resizeImageWrap();
+    }
+
     window.onresize = resizeWindowHandler;
+    screen.onorientationchange = resizeWindowHandler;
 
 })();
