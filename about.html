@@ -3,30 +3,34 @@ layout: default
 ---
 
 <div class="content-wrap">
-    <section class="floating-content">
-        <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a risus erat. Suspendisse potenti. Nulla placerat, erat ac tempus vulputate, lorem lectus lacinia nulla, eu varius nisl tortor quis lacus. Nulla facilisi.</p>
-        <p>Nulla placerat, erat ac tempus vulputate, lorem lectus lacinia nulla, eu varius nisl tortor quis lacus. Nulla facilisi.</p>
-        <p><a href="#">Inquiries</a></p>
+    <section class="floating-content about">
+        <div>
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a risus erat. Suspendisse potenti. Nulla placerat, erat ac tempus vulputate, lorem lectus lacinia nulla, eu varius nisl tortor quis lacus. Nulla facilisi.</p>
+            <p>Nulla placerat, erat ac tempus vulputate, lorem lectus lacinia nulla, eu varius nisl tortor quis lacus. Nulla facilisi.</p>
+        </div>
 
-        <form action="https://formspree.io/dontwakebrannan@gmail.com"
-      method="POST">
-            <div>
-                <label>Your name</label>
-                <input type="text" name="name" placeholder="Your name">
-            </div>
-            <div>
-                <label>Your email</label>
-                <input type="email" name="_replyto" placeholder="Your email">
-            </div>
-            <div>
-                <label>Message</label>
-                <textarea name="message" rows="4"></textarea>
-            </div>
-            <div>
-                <input type="submit" value="Send">
-            </div>
-        </form>
+        <div>
+            <h2>Inquiries</h2>
+            <form class="contact" action="https://formspree.io/dontwakebrannan@gmail.com"
+          method="POST">
+                <div>
+                    <label>Your name</label>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <label>Your email</label>
+                    <input type="email" name="_replyto">
+                </div>
+                <div>
+                    <label>Message</label>
+                    <textarea name="message" rows="4"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+        </div>
 
     </section>
 </div>

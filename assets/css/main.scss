@@ -3,7 +3,9 @@
 ---
 
 $black: #323230;
+$white: #ffffff;
 $highlight: #EA5457;
+$secondary: #008EB9;
 
 @function calculateRem($size) {
     $remSize: $size / 16px;
@@ -234,6 +236,79 @@ article {
 }
 
 /////////////////////////////
+// ABOUT
+/////////////////////////////
+
+.about > div {
+    margin-bottom: 2em;
+}
+
+/* CONTACT FORM */
+
+.contact div {
+    margin-bottom: 1em;
+}
+
+input, textarea {
+    outline: none;
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    width: 50%;
+    padding: 0.5em;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5em;
+}
+
+input, textarea {
+    border-width: 1px;
+    border-style: solid;
+    border-color: lighten($black, 40%);
+    transition: border-color 0.2s ease-in-out;
+
+    &:hover {
+        border-color: $black;
+    }
+
+    &:focus {
+        border-color: $secondary;
+    }
+}
+
+input[type=submit] {
+    width: auto;
+    padding: 1em 4em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 2px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $white;
+    cursor: pointer;
+    background-color: $black;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: lighten($black, 10%);
+    }
+
+    &:focus {
+        border: 1px solid $secondary;
+        background-color: lighten($black, 10%);
+    }
+}
+
+/////////////////////////////
 // CAROUSEL
 /////////////////////////////
 
@@ -279,7 +354,6 @@ article {
 
 .desc {
     display: none;
-    // background-color: red;
 
     @include for-tablet-landscape-up {
         display: flex;
@@ -292,7 +366,6 @@ article {
 }
 
 .carousel .img-wrap {
-    // background-color: purple;
 
     img {
         border: 20px solid white;
@@ -305,21 +378,6 @@ article {
 .slide-num {
     font-size: 11px;
 }
-
-/*
-.desc {
-    width: 40%;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.carousel .img-wrap {
-    width: 60%;
-}
-*/
 
 // 8.3333
 .prev, .next {
@@ -363,8 +421,3 @@ img[data-type=lazy] {
         opacity: 1;
     }
 }
-
-
-/////////////////////////////
-// ART DESCRIPTION
-/////////////////////////////
