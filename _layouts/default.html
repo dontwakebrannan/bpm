@@ -5,11 +5,11 @@
     <header role="banner">
         <nav role="navigation">
             {% if page.back %}
-                <span class="back-btn"><a href="{{ page.back }}">Back</a></span>
+                <span class="back-btn"><a href="{{ site.github.url }}{{ page.back }}">Back</a></span>
             {% endif %}
             <span><h1><a href="/">Brannan McGill</a></h1></span>
-            <span class="nav-link {% if page.url contains '/work/' %} active {% endif %}"><a href="/work">Work</a></span>
-            <span class="nav-link {% if page.url contains '/about/' %} active {% endif %}"><a href="/about">About</a></span>
+            <span class="nav-link {% if page.url contains '/work/' %} active {% endif %}"><a href="{{ site.github.url }}/work">Work</a></span>
+            <span class="nav-link {% if page.url contains '/about/' %} active {% endif %}"><a href="{{ site.github.url }}/about">About</a></span>
         </nav>
         <p class="copyright">&copy;2017 Brannan McGill. All Rights Reserved.</p>
     </header>

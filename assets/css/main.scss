@@ -99,7 +99,7 @@ a {
     &.go {
         display: inline-block;
         padding-right: 20px;
-        background-image: url('/assets/images/sm-arrow-right.svg');
+        background-image: url('{{ site.github.url }}/assets/images/sm-arrow-right.svg');
         background-repeat: no-repeat;
         background-position: right;
     }
@@ -157,7 +157,7 @@ header[role=banner] {
         .back-btn a {
             width: 20px;
             margin-right: 0;
-            background-image: url('/assets/images/arrow-back.svg');
+            background-image: url('{{ site.github.url }}/assets/images/arrow-back.svg');
             text-indent: -10000px;
             overflow: hidden;
             cursor: pointer;
@@ -264,11 +264,11 @@ article {
 }
 
 .prev > div {
-    background-image: url('/assets/images/arrow-left.svg');
+    background-image: url('{{ site.github.url }}/assets/images/arrow-left.svg');
 }
 
 .next > div {
-    background-image: url('/assets/images/arrow-right.svg');
+    background-image: url('{{ site.github.url }}/assets/images/arrow-right.svg');
 }
 
 .slide {
