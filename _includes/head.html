@@ -2,8 +2,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.url == "/404.html" %}
+      <meta http-equiv="refresh" content="5; url=/work">
+    {% endif %}
 
-    <title>Brannan McGill</title>
+    <title>Brannan McGill {% if page.title %}- {{ page.title }} {% endif %}</title>
     <meta name="description" content="" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/assets/css/normalize.css" />
