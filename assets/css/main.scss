@@ -256,7 +256,10 @@ article {
 
     @include for-tablet-portrait-up {
         width: 50%;
-        // justify-content: center;
+
+        &.center {
+            justify-content: center;
+        }
     }
 
     @include for-desktop-up {
