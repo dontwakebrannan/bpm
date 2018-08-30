@@ -17,7 +17,7 @@
 
     function resizeImageWrap() {
         var headerHeight = header.offsetHeight;
-        var windowHeight= window.innerHeight;
+        var windowHeight = window.innerHeight;
         contentWrap.style.height = windowHeight - headerHeight + 'px';
     }
 
@@ -44,7 +44,6 @@
         for (var i = 0; i < noscripts.length; i++) {
             var elem = noscripts[i].parentNode;
             img.fitToWrapper(elem);
-            // console.log(elem);
         }
 
     }, 300);
