@@ -101,7 +101,7 @@ a {
     &.go {
         display: inline-block;
         padding-right: 20px;
-        background-image: url('{{ site.github.url }}/assets/images/sm-arrow-right.svg');
+        background-image: url('{{ "/assets/images/sm-arrow-right.svg" | prepend:site.baseurl }}');
         background-repeat: no-repeat;
         background-position: right;
     }
@@ -159,7 +159,7 @@ header[role=banner] {
         .back-btn a {
             width: 20px;
             margin-right: 0;
-            background-image: url('{{ site.github.url }}/assets/images/arrow-back.svg');
+            background-image: url('{{ "/assets/images/arrow-back.svg" | prepend:site.baseurl }}');
             text-indent: -10000px;
             overflow: hidden;
             cursor: pointer;
@@ -234,7 +234,7 @@ article {
     text-transform: uppercase;
     color: $white;
     background-color: $black;
-    background-image: url('{{ site.github.url }}/assets/images/sm-arrow-right-white.svg');
+    background-image: url('{{ "/assets/images/sm-arrow-right-white.svg" | prepend:site.baseurl }}');
     background-repeat: no-repeat;
     background-position: 85% 50%;
     transition: background-color 0.2s ease-in-out;
@@ -372,11 +372,11 @@ input[type=submit] {
 }
 
 .prev > div {
-    background-image: url('{{ site.github.url }}/assets/images/arrow-left.svg');
+    background-image: url('{{ "/assets/images/arrow-left.svg" | prepend:site.baseurl }}');
 }
 
 .next > div {
-    background-image: url('{{ site.github.url }}/assets/images/arrow-right.svg');
+    background-image: url('{{ "/assets/images/arrow-right.svg" | prepend:site.baseurl }}');
 }
 
 .slide {

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="content-wrap no-padding" style="background-image: url('{{ site.github.url }}/assets/images/exits-disjecta.png'); background-size: cover; background-position: center; background-repeat: no-repeat">
+<section class="content-wrap no-padding" style="background-image: url({{ '/assets/images/exits-disjecta.png' | prepend:site.baseurl }}); background-size: cover; background-position: center; background-repeat: no-repeat">
     <!--
     <div class="img-wrap">
         <noscript data-src="{{ site.github.url }}/assets/images/work/segmentation/IMG_6789.png">
@@ -10,5 +10,5 @@ layout: default
         </noscript>
     </div>
     -->
-    <a class="enter" href="{{ site.github.urg }}/work">Enter<a>
+    <a class="enter" href="{{ '/work' | prepend:site.baseurl }}">Enter<a>
 </section>
